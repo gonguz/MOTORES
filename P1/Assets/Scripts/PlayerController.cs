@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour {
     private bool hasToJump;
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
         rb = GetComponent<Rigidbody2D>();
         transform.position = spawnPoint.position;
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	private void FixedUpdate () {
 
         if (movement != 0)
             rb.velocity = new Vector2(movement * speed, rb.velocity.y);

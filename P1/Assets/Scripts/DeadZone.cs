@@ -7,7 +7,6 @@ public class DeadZone : MonoBehaviour {
     {
         PlayerDead playerDead = other.GetComponent<PlayerDead>();
         if ( playerDead)
-            playerDead.OnDead();
-        
+            playerDead.OnDead();       
     }
 }

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
         else
             DontDestroyOnLoad(this);
     }
-    void Start () {
+    private void Start () {
         playerPoints = 0;
 	}
 	
