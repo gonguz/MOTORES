@@ -6,11 +6,10 @@ public class PickMe : MonoBehaviour {
 
     public int points;
 
-    public GameObject player;
-
+    public string tagName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        if (collision.CompareTag(tagName))
         {
             GameManager.instance.AddPoints(points);
             Destroy(gameObject);

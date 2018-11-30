@@ -6,7 +6,7 @@ public class DeadZone : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerDead playerDead = other.GetComponent<PlayerDead>();
-        if ( playerDead)
+        if (playerDead)
             playerDead.OnDead();       
     }
 }

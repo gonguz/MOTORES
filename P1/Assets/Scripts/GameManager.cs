@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
 
+    public int playerLifes;
+
     private int playerPoints;
     private void Awake()
     {
@@ -23,6 +25,17 @@ public class GameManager : MonoBehaviour {
     public void AddPoints(int points)
     {
         playerPoints += points;
+    }
+
+    public void OnPlayerDamaged()
+    {
+        playerLifes--;
+    }
+
+    //a.k.a LifesLeft
+    public bool PlayerLoseLife()
+    {
+        return playerLifes > 0;
     }
 
 }
