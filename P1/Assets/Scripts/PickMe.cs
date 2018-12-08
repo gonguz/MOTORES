@@ -12,6 +12,7 @@ public class PickMe : MonoBehaviour {
         if (collision.CompareTag(tagName))
         {
             GameManager.instance.AddPoints(points);
+            GameManager.instance.subBarrel();
             Destroy(gameObject);
         }
     }

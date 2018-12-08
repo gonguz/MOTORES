@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 744036006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2b2893bebc69f41bdadb3c504c1088, type: 3}
+  m_Script: {fileID: 11500000, guid: c0a219cfe8f5ac446b03e842d66a6456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 114970666024663696, guid: 3e97b27d58050624b9e64ee3689a1d54,
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7313228d5fa3c4c8ee91f502783d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLifes: 5
+  test: 1
 --- !u!4 &1220034272
 Transform:
   m_ObjectHideFlags: 0

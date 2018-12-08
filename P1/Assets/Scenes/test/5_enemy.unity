@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 360041654}
   - component: {fileID: 360041653}
   - component: {fileID: 360041656}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 360041652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.26, y: -0.48, z: 0}
+  m_LocalPosition: {x: -5.05, y: -0.48, z: 0}
   m_LocalScale: {x: 1.67, y: 1.53, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 382577025}
   - component: {fileID: 382577024}
   - component: {fileID: 382577029}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7313228d5fa3c4c8ee91f502783d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 1
 --- !u!4 &1220034272
 Transform:
   m_ObjectHideFlags: 0

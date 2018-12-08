@@ -14,6 +14,7 @@ public class BumpOnTop : MonoBehaviour {
             {
                 Destroy(this.gameObject);
                 GameManager.instance.AddPoints(points);
+                GameManager.instance.subEnemy();
                 Knockback playerKnockBack = other.gameObject.GetComponent<Knockback>();
                 Vector2 dir = new Vector2(other.transform.position.x - transform.position.x, other.transform.position.y - transform.position.y);
                 if (playerKnockBack)

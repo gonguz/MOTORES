@@ -25,7 +25,13 @@ public class PlayerController : MonoBehaviour {
 	private void FixedUpdate () {
 
         if (movement != 0)
+        {
+            if(movement < 0)
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            if (movement > 0)
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
             rb.velocity = new Vector2(movement * speed, rb.velocity.y);
+        }
 
         if (hasToJump && onGround)
         {

@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void FixedUpdate () {
-
         rb.velocity = new Vector2(movement * Speed * ((transform.localScale.x > 0) ? 1 : -1) , rb.velocity.y);
 	}
 

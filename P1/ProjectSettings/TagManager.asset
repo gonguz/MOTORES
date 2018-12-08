@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - barrel
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - PostProcessing
   - Enemies
   - Bullets
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 
@@ -41,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3460760493
+    locked: 0
+  - name: Game
+    uniqueID: 4213718209
     locked: 0
