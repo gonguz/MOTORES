@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyAfterSeconds : MonoBehaviour {
 
-    public float lifeTime;
+    public float LifeTime;
 	void Start () {
         Invoke("Dispose", 0);
 	}
@@ -16,6 +16,6 @@ public class DestroyAfterSeconds : MonoBehaviour {
 
     private void Dispose()
     {
-        Destroy(gameObject, lifeTime);
+        Destroy(gameObject, LifeTime);
     }
 }

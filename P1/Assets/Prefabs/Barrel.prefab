@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de0dd345a263b4ebf323f80a437bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 5
-  tagName: Player
+  Points: 5
+  TagName: Player
 --- !u!212 &212558748360573594
 SpriteRenderer:
   m_ObjectHideFlags: 1

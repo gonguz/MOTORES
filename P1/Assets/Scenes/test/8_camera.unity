@@ -337,8 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b423f66bf7f1e514ca2b20ccac9aae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5
-  speed: 10
+  JumpForce: 5
+  Speed: 10
   ground: {fileID: 11711262}
   spawnPoint: {fileID: 1438126561}
 --- !u!212 &148904165
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ae6305a8c6844ab83acb634c6a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1438126561}
+  SpawnPoint: {fileID: 1438126561}
 --- !u!114 &148904168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LastPlatform: {fileID: 0}
-  test: 1
+  Test: 1
 --- !u!4 &1220034272
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +885,39 @@ Prefab:
       propertyPath: parentTrans
       value: 
       objectReference: {fileID: 1526798217}
-    m_RemovedComponents: []
+    - target: {fileID: 114985307974030414, guid: f55abd076cc2fc64ea60064358ff28d8,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 148904161}
+    - target: {fileID: 114985307974030414, guid: f55abd076cc2fc64ea60064358ff28d8,
+        type: 2}
+      propertyPath: Points
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630912659325858, guid: f55abd076cc2fc64ea60064358ff28d8,
+        type: 2}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 114970666024663696, guid: 3e97b27d58050624b9e64ee3689a1d54,
+        type: 2}
+    - target: {fileID: 114630912659325858, guid: f55abd076cc2fc64ea60064358ff28d8,
+        type: 2}
+      propertyPath: Cadencia
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630912659325858, guid: f55abd076cc2fc64ea60064358ff28d8,
+        type: 2}
+      propertyPath: Pool
+      value: 
+      objectReference: {fileID: 738014545}
+    - target: {fileID: 114630912659325858, guid: f55abd076cc2fc64ea60064358ff28d8,
+        type: 2}
+      propertyPath: ParentTrans
+      value: 
+      objectReference: {fileID: 1526798217}
+    m_RemovedComponents:
+    - {fileID: 114335639979800330, guid: f55abd076cc2fc64ea60064358ff28d8, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f55abd076cc2fc64ea60064358ff28d8, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1588782364

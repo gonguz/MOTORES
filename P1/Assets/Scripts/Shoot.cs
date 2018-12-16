@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour {
 
-    public Bullet bulletPrefab;
-    public float cadencia;
-    public Transform pool;
-    public Transform parentTrans;
+    public Bullet BulletPrefab;
+    public float Cadencia;
+    public Transform Pool;
+    public Transform ParentTrans;
 
 	// Use this for initialization
 	void Start () {
-        InvokeRepeating("shootBullet", cadencia, cadencia);
+        InvokeRepeating("shootBullet", Cadencia, Cadencia);
 	}
     private void shootBullet()
     {
-        Bullet bullet = Instantiate(bulletPrefab, transform.position, parentTrans.rotation);
-        bullet.transform.parent = pool;
+        Bullet bullet = Instantiate(BulletPrefab, transform.position, ParentTrans.rotation);
+        bullet.transform.parent = Pool;
     }
 }

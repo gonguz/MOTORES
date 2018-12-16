@@ -312,8 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b423f66bf7f1e514ca2b20ccac9aae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5
-  speed: 10
+  JumpForce: 5
+  Speed: 10
   ground: {fileID: 11711262}
   spawnPoint: {fileID: 1438126561}
 --- !u!212 &148904165
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ae6305a8c6844ab83acb634c6a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1438126561}
+  SpawnPoint: {fileID: 1438126561}
 --- !u!114 &148904168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,8 +494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de0dd345a263b4ebf323f80a437bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 5
-  tagName: Player
+  Points: 5
+  TagName: Player
 --- !u!61 &283901578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edc7edc065c0ce4da96dea941f51319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 10
+  points: 5
   player: {fileID: 148904161}
 --- !u!212 &360041654
 SpriteRenderer:
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LastPlatform: {fileID: 0}
-  test: 1
+  Test: 1
 --- !u!4 &1220034272
 Transform:
   m_ObjectHideFlags: 0

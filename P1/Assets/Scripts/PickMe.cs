@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PickMe : MonoBehaviour {
 
-    public int points;
+    public int Points;
 
-    public string tagName;
+    public string TagName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(tagName))
+        if (collision.CompareTag(TagName))
         {
-            GameManager.instance.AddPoints(points);
-            GameManager.instance.subBarrel();
+            GameManager.instance.AddPoints(Points);
+            GameManager.instance.SubBarrel();
             Destroy(gameObject);
         }
     }

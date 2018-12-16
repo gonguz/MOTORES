@@ -7,10 +7,11 @@ public class UIManager : MonoBehaviour {
     public UnityEngine.UI.Text FinishText;
     public GameObject FinishPanel;
     public GameObject[] Lives;
+    public string SceneName;
 
 	// Use this for initialization
 	void Start () {
-        GameManager.instance.setUIManager(this);
+        GameManager.instance.SetUIManager(this);
         if(FinishPanel && FinishText)
             FinishPanel.SetActive(false);
     }
@@ -28,17 +29,21 @@ public class UIManager : MonoBehaviour {
     public void FinishGame(bool playerWins)
     {
         //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-        if (FinishPanel && FinishText) 
-        {
-            FinishPanel.SetActive(true);
-            if (playerWins)
+            if (FinishPanel && FinishText)
             {
-                FinishText.text = "Enhorabuena, has ganado!";
+                FinishPanel.SetActive(true);
+                if (playerWins)
+                {
+                    FinishText.text = "Enhorabuena, has ganado!";
+                }
+                else
+                {
+                    FinishText.text = "Has perdido";
+                }
             }
             else
             {
-                FinishText.text = "Has perdido";
+                GameManager.instance.ChangeScene(SceneName);
             }
-        }
     }
 }

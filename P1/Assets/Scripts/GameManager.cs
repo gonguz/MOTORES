@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
-    private UIManager myUI;
+    private UIManager MyUI;
 
     private int NumOfBarrels;
     private int NumOfEnemies;
 
     public GameObject LastPlatform;
 
-    public bool test;
+    public bool Test;
 
-    private int playerLifes;
+    private int PlayerLifes;
 
-    private int playerPoints;
+    private int PlayerPoints;
     private void Awake()
     {
         if (!instance)
@@ -28,10 +28,10 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(this);
     }
     private void Start () {
-        playerPoints = 0;
-        playerLifes = 3;
-        if(myUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            myUI.UpdateScore(playerPoints);
+        PlayerPoints = 0;
+        PlayerLifes = 3;
+        if(MyUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            MyUI.UpdateScore(PlayerPoints);
         NumOfBarrels = GameObject.FindGameObjectsWithTag("barrel").Length;
         NumOfEnemies = GameObject.FindGameObjectsWithTag("enemy").Length;
         if(LastPlatform)
@@ -40,42 +40,42 @@ public class GameManager : MonoBehaviour {
 	
     public void AddPoints(int points)
     {
-        playerPoints += points;
-        if(myUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            myUI.UpdateScore(playerPoints);
+        PlayerPoints += points;
+        if(MyUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            MyUI.UpdateScore(PlayerPoints);
     }
 
     public void OnPlayerDamaged()
     {
-        playerLifes--;
-        if (playerLifes == 0 && !test) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+        PlayerLifes--;
+        if (PlayerLifes == 0 && !Test) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
         {
-            myUI.FinishGame(false);
+            MyUI.FinishGame(false);
         }
-        Debug.Log("Vidas: " + playerLifes);
-        if(myUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            myUI.LifeLost(playerLifes);
+        Debug.Log("Vidas: " + PlayerLifes);
+        if(MyUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            MyUI.LifeLost(PlayerLifes);
     }
 
     //a.k.a LifesLeft
     public bool PlayerLoseLife()
     {
-        return playerLifes > 0;
+        return PlayerLifes > 0;
     }
 
-    public void setUIManager(UIManager ui)
+    public void SetUIManager(UIManager ui)
     {
-        myUI = ui;
+        MyUI = ui;
     }
 
-    public void subBarrel()
+    public void SubBarrel()
     {
         NumOfBarrels--;
     }
-    public void subEnemy()
+    public void SubEnemy()
     {
         NumOfEnemies--;
-        if(NumOfEnemies == 0)
+        if(NumOfEnemies == 0 && !Test && LastPlatform)
         {
             LastPlatform.SetActive(true);
         }
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour {
     {
         if(NumOfBarrels == 0 && NumOfEnemies == 0)
         {
-            myUI.FinishGame(true);
+            MyUI.FinishGame(true);
         }
     }
 

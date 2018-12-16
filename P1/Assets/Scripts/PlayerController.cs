@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public float jumpForce;
-    public float speed;
+    public float JumpForce;
+    public float Speed;
     public Collider2D ground;
     public Transform spawnPoint;
 
@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour {
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             if (movement > 0)
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            rb.velocity = new Vector2(movement * speed, rb.velocity.y);
+            rb.velocity = new Vector2(movement * Speed, rb.velocity.y);
         }
 
         if (hasToJump && onGround)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(rb.velocity.x, JumpForce), ForceMode2D.Impulse);
             onGround = false;
         }
 	}
