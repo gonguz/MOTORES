@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
-    private UIManager MyUI;
+    private UIManager myUI;
 
-    private int NumOfBarrels;
-    private int NumOfEnemies;
+    private int numOfBarrels;
+    private int numOfEnemies;
 
-    public GameObject LastPlatform;
+    public GameObject lastPlatform;
 
-    public bool Test;
+    public bool test;
 
-    private int PlayerLifes;
+    private int playerLifes;
 
-    private int PlayerPoints;
+    private int playerPoints;
     private void Awake()
     {
         if (!instance)
@@ -28,64 +28,72 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(this);
     }
     private void Start () {
-        PlayerPoints = 0;
-        PlayerLifes = 3;
-        if(MyUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            MyUI.UpdateScore(PlayerPoints);
-        NumOfBarrels = GameObject.FindGameObjectsWithTag("barrel").Length;
-        NumOfEnemies = GameObject.FindGameObjectsWithTag("enemy").Length;
-        if(LastPlatform)
-            LastPlatform.SetActive(false);
+        playerPoints = 0;
+        playerLifes = 3;
+        if(myUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            myUI.UpdateScore(playerPoints);
+        numOfBarrels = GameObject.FindGameObjectsWithTag("barrel").Length;
+        numOfEnemies = GameObject.FindGameObjectsWithTag("enemy").Length;
+        if(lastPlatform)
+            lastPlatform.SetActive(false);
     }
 	
+    //Método que simplemente añade puntos cuando es llamado.
     public void AddPoints(int points)
     {
-        PlayerPoints += points;
-        if(MyUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            MyUI.UpdateScore(PlayerPoints);
+        playerPoints += points;
+        if(myUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            myUI.UpdateScore(playerPoints);
     }
 
+    //Método que resta vidas cuando es llamado.
     public void OnPlayerDamaged()
     {
-        PlayerLifes--;
-        if (PlayerLifes == 0 && !Test) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+        playerLifes--;
+        //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+        //Si el número de vidas es 0, entonces el juego ha terminado
+        if (playerLifes == 0 && !test)
         {
-            MyUI.FinishGame(false);
+            myUI.FinishGame(false);
         }
-        Debug.Log("Vidas: " + PlayerLifes);
-        if(MyUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            MyUI.LifeLost(PlayerLifes);
+        Debug.Log("Vidas: " + playerLifes);
+        if(myUI) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            myUI.LifeLost(playerLifes);
     }
 
-    //a.k.a LifesLeft
+    //Devuelve si el jugador sigue vivo.
     public bool PlayerLoseLife()
     {
-        return PlayerLifes > 0;
+        return playerLifes > 0;
     }
 
     public void SetUIManager(UIManager ui)
     {
-        MyUI = ui;
+        myUI = ui;
     }
 
+    //Disminuye el número de barriles.
     public void SubBarrel()
     {
-        NumOfBarrels--;
+        numOfBarrels--;
     }
+
+    //Disminuye el número de enemigos y si es 0, activa la bandera para ganar.
     public void SubEnemy()
     {
-        NumOfEnemies--;
-        if(NumOfEnemies == 0 && !Test && LastPlatform)
+        numOfEnemies--;
+        if(numOfEnemies == 0 && !test && lastPlatform)
         {
-            LastPlatform.SetActive(true);
+            lastPlatform.SetActive(true);
         }
     }
 
+    //Si se han cogido todos los barriles y no quedan enemigos, una vez, que hayamos cogido la bandera, ganamos.
     public void PlayerTookAllBarrelsAndEnemies()
     {
-        if(NumOfBarrels == 0 && NumOfEnemies == 0)
+        if(numOfBarrels == 0 && numOfEnemies == 0)
         {
-            MyUI.FinishGame(true);
+            myUI.FinishGame(true);
         }
     }
 

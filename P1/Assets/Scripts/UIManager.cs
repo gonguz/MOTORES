@@ -3,47 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
-    public UnityEngine.UI.Text ScoringText;
-    public UnityEngine.UI.Text FinishText;
-    public GameObject FinishPanel;
-    public GameObject[] Lives;
-    public string SceneName;
+    public UnityEngine.UI.Text scoringText;
+    public UnityEngine.UI.Text finishText;
+    public GameObject finishPanel;
+    public GameObject[] lives;
+    public string sceneName;
 
 	// Use this for initialization
 	void Start () {
         GameManager.instance.SetUIManager(this);
-        if(FinishPanel && FinishText)
-            FinishPanel.SetActive(false);
+        if(finishPanel && finishText)
+            finishPanel.SetActive(false);
     }
 
+    //Actualizamos puntuación del canvas.
     public void UpdateScore(int points)
     {
-        ScoringText.text = points.ToString();
+        scoringText.text = points.ToString();
     }
 
+    //Actualizamos UI de las vidas.
     public void LifeLost(int life)
     {
-        Lives[life].SetActive(false);
+        lives[life].SetActive(false);
     }
 
+    //Si el juego ha terminado entonces cargamos el correspondiente panel de victoria o derrota.
     public void FinishGame(bool playerWins)
     {
         //Estas comprobaciones son para que no fallen en las escenas primeras de /test
-            if (FinishPanel && FinishText)
+            if (finishPanel && finishText)
             {
-                FinishPanel.SetActive(true);
+                finishPanel.SetActive(true);
                 if (playerWins)
                 {
-                    FinishText.text = "Enhorabuena, has ganado!";
+                    finishText.text = "Enhorabuena, has ganado!";
                 }
                 else
                 {
-                    FinishText.text = "Has perdido";
+                    finishText.text = "Has perdido";
                 }
             }
             else
             {
-                GameManager.instance.ChangeScene(SceneName);
+                GameManager.instance.ChangeScene(sceneName);
             }
     }
 }

@@ -10,8 +10,8 @@ public class FollowTarget : MonoBehaviour {
 	void Start () {
         speed = 2.0f;
 	}
-	
 	// Update is called once per frame
+    //Si tiene un target establecido, entonces la camara se encargará de seguirle, con un determinado offset.
 	void Update () {
         if (target)
         {

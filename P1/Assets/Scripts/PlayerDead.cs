@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerDead : MonoBehaviour {
 
-    public Transform SpawnPoint;
+    public Transform spawnPoint;
 
     public void OnDead()
     {
-        GameManager.instance.OnPlayerDamaged();//Le quitamos una vida al jugador
-        if (GameManager.instance.PlayerLoseLife())//Si puede re-spawnear pues lo re-spawneamos
-            transform.position = SpawnPoint.position;
-        else//nos cargamos al jugador
+        //Le quitamos una vida al jugador
+        GameManager.instance.OnPlayerDamaged();
+        //Si puede re-spawnear pues lo re-spawneamos
+        if (GameManager.instance.PlayerLoseLife())
+            transform.position = spawnPoint.position;
+        //si no nos cargamos al jugador
+        else
             Destroy(gameObject);
     }
 }

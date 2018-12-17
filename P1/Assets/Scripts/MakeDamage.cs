@@ -10,7 +10,8 @@ public class MakeDamage : MonoBehaviour {
         if (playerDead)
         {
             playerDead.OnDead();
-            if(GetComponent<DestroyAfterSeconds>()) //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            //Estas comprobaciones son para que no fallen en las escenas primeras de /test
+            if (GetComponent<DestroyAfterSeconds>())
                 GetComponent<DestroyAfterSeconds>().Cancel();
             Destroy(gameObject);
         }

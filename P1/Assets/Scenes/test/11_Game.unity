@@ -153,11 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a219cfe8f5ac446b03e842d66a6456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 114970666024663696, guid: 3e97b27d58050624b9e64ee3689a1d54,
+  bulletPrefab: {fileID: 114970666024663696, guid: 3e97b27d58050624b9e64ee3689a1d54,
     type: 2}
-  Cadencia: 5
-  Pool: {fileID: 738014545}
-  ParentTrans: {fileID: 1905118719}
+  cadencia: 5
+  pool: {fileID: 738014545}
+  parentTrans: {fileID: 1905118719}
 --- !u!1 &11711260
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,9 +582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b423f66bf7f1e514ca2b20ccac9aae50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 5
-  Speed: 10
-  ground: {fileID: 11711262}
+  jumpForce: 5
+  speed: 10
   spawnPoint: {fileID: 1438126561}
 --- !u!212 &148904165
 SpriteRenderer:
@@ -656,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0ae6305a8c6844ab83acb634c6a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPoint: {fileID: 1438126561}
+  spawnPoint: {fileID: 1438126561}
 --- !u!114 &148904168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a890ef869d2d81478f6d3a482251aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnockbackForce: 3
+  knockbackForce: 1
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,8 +776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de0dd345a263b4ebf323f80a437bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points: 5
-  TagName: Player
+  points: 5
+  tagName: Player
 --- !u!61 &193634983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1690,14 +1689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e815ede8fdf865a44a62b0c1e8ce7479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoringText: {fileID: 1839957033}
-  FinishText: {fileID: 1264857751}
-  FinishPanel: {fileID: 83811281}
-  Lives:
+  scoringText: {fileID: 1839957033}
+  finishText: {fileID: 1264857751}
+  finishPanel: {fileID: 83811281}
+  lives:
   - {fileID: 677194820}
   - {fileID: 2115489532}
   - {fileID: 475754295}
-  SceneName: 
+  sceneName: 
 --- !u!114 &789495064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,8 +1817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de0dd345a263b4ebf323f80a437bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points: 5
-  TagName: Player
+  points: 5
+  tagName: Player
 --- !u!61 &821775574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2188,8 +2187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7313228d5fa3c4c8ee91f502783d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastPlatform: {fileID: 0}
-  Test: 0
+  lastPlatform: {fileID: 0}
+  test: 0
 --- !u!4 &1220034272
 Transform:
   m_ObjectHideFlags: 0
@@ -2700,11 +2699,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a219cfe8f5ac446b03e842d66a6456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 114970666024663696, guid: 3e97b27d58050624b9e64ee3689a1d54,
+  bulletPrefab: {fileID: 114970666024663696, guid: 3e97b27d58050624b9e64ee3689a1d54,
     type: 2}
-  Cadencia: 6
-  Pool: {fileID: 738014545}
-  ParentTrans: {fileID: 2094588507}
+  cadencia: 5
+  pool: {fileID: 738014545}
+  parentTrans: {fileID: 2094588507}
 --- !u!1 &1905118718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,7 +2773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 5
-  player: {fileID: 148904161}
 --- !u!212 &1905118723
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2890,7 +2888,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 5
-  player: {fileID: 148904161}
 --- !u!212 &2094588511
 SpriteRenderer:
   m_ObjectHideFlags: 0

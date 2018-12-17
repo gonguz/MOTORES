@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour {
 
-    public Bullet BulletPrefab;
-    public float Cadencia;
-    public Transform Pool;
-    public Transform ParentTrans;
+    public Bullet bulletPrefab;
+    public float cadencia;
+    public Transform pool;
+    public Transform parentTrans;
 
 	// Use this for initialization
+    //Creamos una bala con una determinada cadencia.
 	void Start () {
-        InvokeRepeating("shootBullet", Cadencia, Cadencia);
+        InvokeRepeating("shootBullet", cadencia, cadencia);
 	}
     private void shootBullet()
     {
-        Bullet bullet = Instantiate(BulletPrefab, transform.position, ParentTrans.rotation);
-        bullet.transform.parent = Pool;
+        Bullet bullet = Instantiate(bulletPrefab, transform.position, parentTrans.rotation);
+        bullet.transform.parent = pool;
     }
 }
